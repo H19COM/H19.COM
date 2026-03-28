@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>H19 下载帮助 - 常见问题与说明</title>
+    <meta name="description" content="H19下载帮助页，集中整理关于 H19 的常见问题、说明问答与帮助信息。">
+    <meta name="keywords" content="H19,H19下载,H19问题,H19帮助,H19说明">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--bg:#f4f8fb;--card:#fff;--text:#1e293b;--muted:#64748b;--line:#e2e8f0}
+        body{font-family:'Segoe UI',Roboto,'Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+        .navbar{position:fixed;top:0;left:0;width:100%;background:linear-gradient(180deg,#123d62 0%,#0f3b5c 100%);box-shadow:0 8px 24px rgba(15,59,92,.18);z-index:1000;border-bottom:1px solid rgba(255,255,255,.08)}
+        .nav-container{max-width:1280px;margin:0 auto;padding:10px 16px 12px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:nowrap}
+        .logo{font-size:1.25rem;font-weight:800;color:#fff;letter-spacing:-.2px;padding:2px 0;display:flex;align-items:center;gap:10px;flex-shrink:0}
+        .brand-text{color:#fff}.site-logo{width:40px;height:40px;object-fit:contain;border-radius:10px;background:transparent;flex-shrink:0}
+        .mobile-brand{display:none}.menu-toggle{display:none}
+        .nav-links{display:flex;align-items:stretch;gap:8px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;padding:2px 0 0;max-width:100%}
+        .nav-links::-webkit-scrollbar{display:none}
+        .nav-links a{min-width:72px;padding:8px 10px;text-decoration:none;font-weight:600;color:rgba(255,255,255,.84);border-radius:14px;transition:.2s;white-space:nowrap;font-size:.78rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);flex-shrink:0}
+        .nav-links a:hover{background:rgba(255,255,255,.12);color:#fff;transform:translateY(-1px)}
+        .nav-links a.active{background:#fff;color:#0f3b5c;box-shadow:0 8px 18px rgba(0,0,0,.14)}
+        .nav-links a.active .nav-icon svg{stroke:#0f3b5c}
+        .nav-icon{width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center}
+        .nav-icon svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+        .nav-text{line-height:1;display:block}
+        .main-content{padding-top:96px;min-height:100vh}
+        .container{max-width:1280px;margin:0 auto;padding:20px}
+        .hero{background:linear-gradient(135deg,#0f3b5c 0%,#174a72 60%,#1b5b87 100%);color:#fff;border-radius:28px;padding:34px;box-shadow:0 18px 40px rgba(15,59,92,.15);margin-bottom:24px}
+        .hero h1{font-size:2.2rem;line-height:1.18;margin-bottom:14px}
+        .hero p{color:rgba(255,255,255,.88)}
+        .layout{display:grid;grid-template-columns:1fr 340px;gap:24px}
+        .card,.widget{background:#fff;border-radius:24px;padding:24px;border:1px solid var(--line);box-shadow:0 8px 24px rgba(15,59,92,.04)}
+        .card h2,.widget h3{font-size:1.18rem;color:#0f2c3d;margin-bottom:12px}
+        .faq{display:grid;gap:14px}
+        .qa{background:#f8fbfd;border:1px solid #e3edf4;border-radius:18px;padding:18px}
+        .qa strong{display:block;color:#0f3b5c;margin-bottom:8px}
+        .qa p,.widget p{color:#64748b}
+        footer{background:#eef3f6;margin-top:52px;padding:28px 20px;text-align:center;font-size:.88rem;color:#5f7387;border-top:1px solid #dce5ec}
+        @media (max-width:1024px){.layout{grid-template-columns:1fr}.hero h1{font-size:2rem}}
+        @media (max-width:768px){
+            .nav-container{display:grid;grid-template-columns:44px 1fr;align-items:center;gap:8px 10px;padding:10px 12px}
+            .logo{display:none}
+            .mobile-brand{display:flex;align-items:center;justify-content:center;min-height:40px;padding:6px 14px;border-radius:12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.10);justify-self:center;width:100%;max-width:220px}
+            .mobile-brand img{display:block;width:auto;height:26px;max-width:180px;object-fit:contain}
+            .menu-toggle{width:40px;height:40px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.10);border-radius:12px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;padding:0}
+            .menu-toggle svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+            .nav-links{display:none;grid-column:1 / -1;width:100%;margin-top:4px;padding:0;gap:8px;overflow:visible;flex-wrap:wrap}
+            .navbar.menu-open .nav-links{display:flex}
+            .nav-links a{min-width:calc(25% - 6px);flex:1 1 calc(25% - 6px);padding:10px 8px;font-size:.72rem;border-radius:12px}
+            .nav-icon,.nav-icon svg{width:20px;height:20px}
+            .main-content{padding-top:88px}.container{padding:14px}.hero{padding:24px}.hero h1{font-size:1.62rem}
+        }
+    
+        .page-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 8px 0 20px;
+            padding: 14px 16px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 18px;
+            box-shadow: 0 8px 24px rgba(15,59,92,0.04);
+        }
+        .page-actions-label {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: #0f3b5c;
+            margin-right: 4px;
+        }
+        .action-btn {
+            appearance: none;
+            border: 1px solid #d7e2eb;
+            background: #f8fbfd;
+            color: #0f3b5c;
+            border-radius: 999px;
+            padding: 10px 16px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+        .action-btn:hover {
+            transform: translateY(-1px);
+            background: #eef5fa;
+        }
+        .action-btn.is-liked,
+        .action-btn[disabled] {
+            background: #0f3b5c;
+            color: #ffffff;
+            border-color: #0f3b5c;
+            cursor: default;
+        }
+        .action-meta {
+            color: #64748b;
+            font-size: 0.86rem;
+        }
+        @media (max-width: 768px) {
+            .page-actions {
+                margin: 6px 0 16px;
+                padding: 12px;
+                gap: 10px;
+            }
+            .page-actions-label {
+                width: 100%;
+                margin-right: 0;
+            }
+            .action-btn {
+                padding: 9px 14px;
+                font-size: 0.85rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="navbar">
+    <div class="nav-container">
+        <button class="menu-toggle" id="menuToggle" aria-label="打开导航" aria-expanded="false">
+            <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+        </button>
+        <div class="mobile-brand"><img src="logo-mobile.png" alt="H19.CLUN"></div>
+        <div class="logo"><img src="logo.png" alt="H19 Logo" class="site-logo" onerror="this.style.display='none'"><span class="brand-text">H19.CLUN</span></div>
+
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">
+                <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M6 8c1.4-1.7 3.4-2.5 6-2.5s4.6.8 6 2.5"/><path d="M7 16c1.2 1.1 2.9 1.7 5 1.7s3.8-.6 5-1.7"/></svg></span>
+                <span class="nav-text">首存</span>
+            </a>
+            <a href="slot-guide.html">
+                <span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="12" height="16" rx="2"/><path d="M9 8h1M12 8h1M9 12h1M12 12h1"/><path d="M17 7h2a1 1 0 0 1 1 1v3"/></svg></span>
+                <span class="nav-text">老虎机</span>
+            </a>
+            <a href="fish-guide.html">
+                <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M3 12c2.8-3.4 6.2-5 10-5 3.4 0 5.9 1 8 3-2.1 2-4.6 3-8 3-3.8 0-7.2-1.6-10-5Z"/><path d="M8 12h.01"/><path d="M14 13c0 2.2-1.8 4-4 4"/></svg></span>
+                <span class="nav-text">捕鱼</span>
+            </a>
+            <a href="sports-guide.html">
+                <span class="nav-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3l3 4-3 2-3-2 3-4Zm-6 7 3 1 1 3-2 3-4-1 2-6Zm12 0 2 6-4 1-2-3 1-3 3-1Zm-8 8h4l1 3-3 2-3-2 1-3Z"/></svg></span>
+                <span class="nav-text">体育</span>
+            </a>
+            <a href="cockfight-guide.html">
+                <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M7 16c0-3 2-6 6-6 2.8 0 4.5 1.8 4.5 4.2 0 3.2-2.7 5.8-6 5.8H8.5C7.7 20 7 19.3 7 18.5V16Z"/><path d="M12 8c.5-1.5 1.8-2.5 3.5-2.5.6 0 1.2.1 1.7.4-.2-1.1.4-2.2 1.5-2.7"/><path d="M7 14 5 12l2-1"/></svg></span>
+                <span class="nav-text">斗鸡</span>
+            </a>
+            <a href="lottery-guide.html">
+                <span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="M8 10h8M8 14h5"/><circle cx="17" cy="14" r="1"/></svg></span>
+                <span class="nav-text">彩票</span>
+            </a>
+            <a href="events.html">
+                <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6"/><path d="M12 4v10"/><path d="m8 8 4-4 4 4"/></svg></span>
+                <span class="nav-text">活动介绍</span>
+            </a>
+            <a href="install.html" class="active">
+                <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 3v10"/><path d="m8.5 10.5 3.5 3.5 3.5-3.5"/><rect x="5" y="17" width="14" height="3" rx="1.5"/></svg></span>
+                <span class="nav-text">下载帮助</span>
+            </a>
+            <a href="about.html">
+                <span class="nav-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M6 19a6 6 0 0 1 12 0"/></svg></span>
+                <span class="nav-text">关于我们</span>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<div class="main-content">
+    <div class="container">
+
+        <div class="page-actions" data-page-actions>
+            <div class="page-actions-label">页面互动</div>
+            <a class="action-btn share-facebook-btn" href="#" target="_blank" rel="noopener noreferrer">
+                <span>分享到 Facebook</span>
+            </a>
+            <button class="action-btn like-btn" type="button">
+                <span class="like-btn-text">点赞</span>
+                <span class="like-count">0</span>
+            </button>
+            <span class="action-meta like-note">当前为静态站前端版：同一浏览器 24 小时内同页面只能点 1 次。</span>
+        </div>
+
+        <section class="hero">
+            <h1>下载帮助 / 关于 H19 的常见问题</h1>
+            <p>这一页重新作为“下载帮助”频道使用，但内部不只是安装说明，还整合关于 H19 的一系列问题问答。这样更适合作为帮助页，也更方便后期围绕搜索关键词扩展问答内容。</p>
+        </section>
+
+        <section class="layout">
+            <div class="card">
+                <h2>常见问题问答</h2>
+                <div class="faq">
+                    <div class="qa">
+                        <strong>H19 是什么？</strong>
+                        <p>这里可以后期改成更完整的品牌说明型答案，解释 H19 的定位、主要内容和用户常见使用场景。</p>
+                    </div>
+                    <div class="qa">
+                        <strong>H19 怎么下载？</strong>
+                        <p>这里可以后期整理为下载步骤说明、设备适配说明和常见失败原因说明，不要写成过强引导语。</p>
+                    </div>
+                    <div class="qa">
+                        <strong>H19 无法打开怎么办？</strong>
+                        <p>这里后期可以写访问异常、缓存问题、网络问题、版本问题等排查步骤，做成真正的帮助型内容。</p>
+                    </div>
+                    <div class="qa">
+                        <strong>H19 注册相关问题有哪些？</strong>
+                        <p>这里后期可以回答注册流程、信息填写要求、常见错误提示和账号使用注意事项。</p>
+                    </div>
+                    <div class="qa">
+                        <strong>H19 登录异常怎么处理？</strong>
+                        <p>这里后期可以补充登录失败、验证码问题、忘记密码、设备切换等相关说明。</p>
+                    </div>
+                    <div class="qa">
+                        <strong>H19 首存相关说明在哪里看？</strong>
+                        <p>首页现在已经改成“首存”默认页，后续首存规则、活动说明和帮助说明都可以从首页继续承接。</p>
+                    </div>
+                </div>
+            </div>
+            <aside class="widget">
+                <h3>帮助页设计逻辑</h3>
+                <p>这一页以后可以持续加问题，不需要一次写满。你可以围绕 H19、下载、登录、注册、打不开、首存、活动这些搜索词不断补FAQ。</p>
+                <p style="margin-top:12px;">这样页面会越来越像正常帮助中心，而不是单纯的安装落地页。</p>
+            </aside>
+        </section>
+    </div>
+</div>
+
+<footer>
+    <p>下载帮助页已按你的要求加入“关于 H19 的一系列问题”，后续可以继续补充问答。</p>
+</footer>
+
+<script>
+(function () {
+  var toggle = document.getElementById('menuToggle');
+  var navbar = document.querySelector('.navbar');
+  if (!toggle || !navbar) return;
+  toggle.addEventListener('click', function () {
+    var open = navbar.classList.toggle('menu-open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+})();
+</script>
+
+<script>
+(function () {
+  function ensureActionBars() {
+    var containers = document.querySelectorAll('.container');
+    containers.forEach(function(container, idx) {
+      if (idx > 0) return;
+      if (container.querySelector('[data-page-actions]')) return;
+      container.insertAdjacentHTML('afterbegin', `
+        <div class="page-actions" data-page-actions>
+            <div class="page-actions-label">页面互动</div>
+            <a class="action-btn share-facebook-btn" href="#" target="_blank" rel="noopener noreferrer">
+                <span>分享到 Facebook</span>
+            </a>
+            <button class="action-btn like-btn" type="button">
+                <span class="like-btn-text">点赞</span>
+                <span class="like-count">0</span>
+            </button>
+            <span class="action-meta like-note">当前为静态站前端版：同一浏览器 24 小时内同页面只能点 1 次。</span>
+        </div>
+`);
+    });
+  }
+
+  function initShareButtons() {
+    var currentUrl = window.location.href;
+    var pageTitle = document.title || 'H19';
+    var shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(currentUrl) + '&quote=' + encodeURIComponent(pageTitle);
+    document.querySelectorAll('.share-facebook-btn').forEach(function(btn){
+      btn.setAttribute('href', shareUrl);
+    });
+  }
+
+  function initLikes() {
+    var pageKey = 'h19_like_' + window.location.pathname.replace(/[^a-zA-Z0-9]/g, '_');
+    var likedKey = pageKey + '_liked_until';
+    var countKey = pageKey + '_count';
+    var now = Date.now();
+    var likedUntil = parseInt(localStorage.getItem(likedKey) || '0', 10);
+    var count = parseInt(localStorage.getItem(countKey) || '0', 10);
+
+    document.querySelectorAll('.like-btn').forEach(function(btn){
+      var countEl = btn.querySelector('.like-count');
+      var textEl = btn.querySelector('.like-btn-text');
+      if (countEl) countEl.textContent = String(count);
+
+      if (likedUntil > now) {
+        btn.classList.add('is-liked');
+        btn.disabled = true;
+        if (textEl) textEl.textContent = '已点赞';
+      }
+
+      btn.addEventListener('click', function() {
+        var currentNow = Date.now();
+        var currentLikedUntil = parseInt(localStorage.getItem(likedKey) || '0', 10);
+        var currentCount = parseInt(localStorage.getItem(countKey) || '0', 10);
+
+        if (currentLikedUntil > currentNow) {
+          btn.classList.add('is-liked');
+          btn.disabled = true;
+          if (textEl) textEl.textContent = '已点赞';
+          if (countEl) countEl.textContent = String(currentCount);
+          return;
+        }
+
+        currentCount += 1;
+        localStorage.setItem(countKey, String(currentCount));
+        localStorage.setItem(likedKey, String(currentNow + 24 * 60 * 60 * 1000));
+
+        btn.classList.add('is-liked');
+        btn.disabled = true;
+        if (textEl) textEl.textContent = '已点赞';
+        if (countEl) countEl.textContent = String(currentCount);
+      });
+    });
+  }
+
+  ensureActionBars();
+  initShareButtons();
+  initLikes();
+})();
+</script>
+
+</body>
+</html>

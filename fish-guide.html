@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>捕鱼攻略大全 - H19玩家攻略站</title>
+<meta content="H19捕鱼游戏技巧大全：高分鱼刷新规律、炮台倍率选择、Boss打法、免费资源获取，助你轻松成为捕鱼达人。" name="description"/>
+<meta content="H19捕鱼,捕鱼攻略,捕鱼技巧,高分鱼,Boss打法,免费金币" name="keywords"/>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.5;
+        }
+
+        /* 固定顶部导航 */
+        
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(180deg, #123d62 0%, #0f3b5c 100%);
+            box-shadow: 0 8px 24px rgba(15, 59, 92, 0.18);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 10px 16px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            flex-wrap: nowrap;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.2px;
+            padding: 2px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+        .logo span, .brand-text {
+            color: #ffffff;
+        }
+        .site-logo {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            border-radius: 10px;
+            background: transparent;
+            flex-shrink: 0;
+        }
+
+        .mobile-brand {
+            display: none;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: stretch;
+            gap: 8px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding: 2px 0 0;
+            max-width: 100%;
+        }
+        .nav-links::-webkit-scrollbar { display: none; }
+
+        .nav-links a {
+            min-width: 72px;
+            padding: 8px 10px;
+            text-decoration: none;
+            font-weight: 600;
+            color: rgba(255,255,255,0.84);
+            border-radius: 14px;
+            transition: all 0.2s;
+            white-space: nowrap;
+            font-size: 0.78rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.06);
+            flex-shrink: 0;
+        }
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.12);
+            color: #ffffff;
+            transform: translateY(-1px);
+        }
+        .nav-links a.active {
+            background: #ffffff;
+            color: #0f3b5c;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.14);
+        }
+        .nav-links a.active .nav-icon svg {
+            stroke: #0f3b5c;
+        }
+
+        .nav-icon {
+            width: 22px;
+            height: 22px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .nav-text {
+            line-height: 1;
+            display: block;
+        }
+/* 主内容区域 */
+        .main-content {
+            padding-top: 104px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 页面标题 */
+        .page-header {
+            margin-bottom: 32px;
+        }
+        .page-header h1 {
+            font-size: 2rem;
+            color: #0f2c3d;
+            border-left: 5px solid #2c7da0;
+            padding-left: 20px;
+        }
+        .page-header p {
+            color: #475569;
+            margin-top: 8px;
+            font-size: 1rem;
+        }
+
+        /* 两列布局 */
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 32px;
+        }
+
+        /* 文章卡片网格 */
+        .articles-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+        .card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #e9eef3;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px -12px rgba(0,0,0,0.1);
+        }
+        .card-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            background-color: #d9e2ef;
+        }
+        .card-content {
+            padding: 20px;
+        }
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #0f2c3d;
+        }
+        .card-meta {
+            font-size: 0.8rem;
+            color: #5b6e8c;
+            margin-bottom: 12px;
+        }
+        .card-excerpt {
+            color: #334155;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        .read-more {
+            color: #2c7da0;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* 侧边栏 */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+        .widget {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            border: 1px solid #e9eef3;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+        .widget h3 {
+            font-size: 1.1rem;
+            border-left: 4px solid #2c7da0;
+            padding-left: 12px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        .hot-list {
+            list-style: none;
+        }
+        .hot-list li {
+            margin-bottom: 14px;
+            border-bottom: 1px dashed #edf2f7;
+            padding-bottom: 10px;
+        }
+        .hot-list a {
+            text-decoration: none;
+            color: #1e293b;
+            font-weight: 500;
+            display: block;
+        }
+        .hot-list a:hover {
+            color: #2c7da0;
+        }
+        .activity-item {
+            background: #f1f5f9;
+            border-radius: 14px;
+            padding: 12px;
+            margin-bottom: 12px;
+        }
+        .btn-outline {
+            display: inline-block;
+            background: transparent;
+            border: 1px solid #2c7da0;
+            color: #2c7da0;
+            padding: 8px 18px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 8px;
+            transition: 0.2s;
+        }
+        .btn-outline:hover {
+            background: #2c7da0;
+            color: white;
+        }
+        .btn-download {
+            background: #0f3b5c;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            font-size: 1rem;
+            transition: 0.2s;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .btn-download:hover {
+            background: #1e5a7a;
+        }
+
+        /* 底部 */
+        footer {
+            background: #eef2f6;
+            margin-top: 60px;
+            padding: 32px 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #475569;
+            border-top: 1px solid #dce3ec;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .nav-container {
+                display: grid;
+                grid-template-columns: 44px 1fr;
+                align-items: center;
+                gap: 8px 10px;
+                padding: 10px 12px;
+            }
+            .logo {
+                display: none;
+            }
+            .mobile-brand {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 40px;
+                padding: 6px 14px;
+                border-radius: 12px;
+                background: rgba(255,255,255,0.12);
+                border: 1px solid rgba(255,255,255,0.10);
+                justify-self: center;
+                width: 100%;
+                max-width: 220px;
+            }
+            .mobile-brand img {
+                display: block;
+                width: auto;
+                height: 26px;
+                max-width: 180px;
+                object-fit: contain;
+            }
+            .menu-toggle {
+                width: 40px;
+                height: 40px;
+                border: 1px solid rgba(255,255,255,0.12);
+                background: rgba(255,255,255,0.10);
+                border-radius: 12px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                color: #ffffff;
+                padding: 0;
+            }
+            .menu-toggle svg {
+                width: 22px;
+                height: 22px;
+                stroke: currentColor;
+                fill: none;
+                stroke-width: 2;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+            }
+            .nav-links {
+                display: none;
+                grid-column: 1 / -1;
+                width: 100%;
+                margin-top: 4px;
+                padding: 0;
+                gap: 8px;
+                overflow: visible;
+                flex-wrap: wrap;
+            }
+            .navbar.menu-open .nav-links {
+                display: flex;
+            }
+            .nav-links a {
+                min-width: calc(25% - 6px);
+                flex: 1 1 calc(25% - 6px);
+                padding: 10px 8px;
+                font-size: 0.72rem;
+                border-radius: 12px;
+            }
+            .nav-icon, .nav-icon svg {
+                width: 20px;
+                height: 20px;
+            }
+            .site-logo {
+                width: 34px;
+                height: 34px;
+            }
+        }
+
+        /* 禁止图片拖拽与选中 */
+        img {
+            user-select: none;
+            -webkit-user-drag: none;
+            pointer-events: auto;
+        }
+    
+        .page-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 8px 0 20px;
+            padding: 14px 16px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 18px;
+            box-shadow: 0 8px 24px rgba(15,59,92,0.04);
+        }
+        .page-actions-label {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: #0f3b5c;
+            margin-right: 4px;
+        }
+        .action-btn {
+            appearance: none;
+            border: 1px solid #d7e2eb;
+            background: #f8fbfd;
+            color: #0f3b5c;
+            border-radius: 999px;
+            padding: 10px 16px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+        .action-btn:hover {
+            transform: translateY(-1px);
+            background: #eef5fa;
+        }
+        .action-btn.is-liked,
+        .action-btn[disabled] {
+            background: #0f3b5c;
+            color: #ffffff;
+            border-color: #0f3b5c;
+            cursor: default;
+        }
+        .action-meta {
+            color: #64748b;
+            font-size: 0.86rem;
+        }
+        @media (max-width: 768px) {
+            .page-actions {
+                margin: 6px 0 16px;
+                padding: 12px;
+                gap: 10px;
+            }
+            .page-actions-label {
+                width: 100%;
+                margin-right: 0;
+            }
+            .action-btn {
+                padding: 9px 14px;
+                font-size: 0.85rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="navbar">
+<div class="nav-container">
+        <button class="menu-toggle" id="menuToggle" aria-label="打开导航" aria-expanded="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 7h16M4 12h16M4 17h16"></path>
+            </svg>
+        </button>
+        <div class="mobile-brand">
+            <img src="logo-mobile.png" alt="H19.CLUN">
+        </div>
+
+<div class="logo"><img src="logo.png" alt="H19 Logo" class="site-logo" onerror="this.style.display='none'"><span class="brand-text">H19.CLUN</span></div>
+
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">
+                <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M6 8c1.4-1.7 3.4-2.5 6-2.5s4.6.8 6 2.5"/><path d="M7 16c1.2 1.1 2.9 1.7 5 1.7s3.8-.6 5-1.7"/></svg></span>
+                <span class="nav-text">首存</span>
+            </a>
+            <a href="slot-guide.html">
+                <span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="12" height="16" rx="2"/><path d="M9 8h1M12 8h1M9 12h1M12 12h1"/><path d="M17 7h2a1 1 0 0 1 1 1v3"/></svg></span>
+                <span class="nav-text">老虎机</span>
+            </a>
+            <a href="fish-guide.html" class="active">
+                <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M3 12c2.8-3.4 6.2-5 10-5 3.4 0 5.9 1 8 3-2.1 2-4.6 3-8 3-3.8 0-7.2-1.6-10-5Z"/><path d="M8 12h.01"/><path d="M14 13c0 2.2-1.8 4-4 4"/></svg></span>
+                <span class="nav-text">捕鱼</span>
+            </a>
+            <a href="sports-guide.html">
+                <span class="nav-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3l3 4-3 2-3-2 3-4Zm-6 7 3 1 1 3-2 3-4-1 2-6Zm12 0 2 6-4 1-2-3 1-3 3-1Zm-8 8h4l1 3-3 2-3-2 1-3Z"/></svg></span>
+                <span class="nav-text">体育</span>
+            </a>
+            <a href="cockfight-guide.html">
+                <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M7 16c0-3 2-6 6-6 2.8 0 4.5 1.8 4.5 4.2 0 3.2-2.7 5.8-6 5.8H8.5C7.7 20 7 19.3 7 18.5V16Z"/><path d="M12 8c.5-1.5 1.8-2.5 3.5-2.5.6 0 1.2.1 1.7.4-.2-1.1.4-2.2 1.5-2.7"/><path d="M7 14 5 12l2-1"/></svg></span>
+                <span class="nav-text">斗鸡</span>
+            </a>
+            <a href="lottery-guide.html">
+                <span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="M8 10h8M8 14h5"/><circle cx="17" cy="14" r="1"/></svg></span>
+                <span class="nav-text">彩票</span>
+            </a>
+            <a href="events.html">
+                <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6"/><path d="M12 4v10"/><path d="m8 8 4-4 4 4"/></svg></span>
+                <span class="nav-text">活动介绍</span>
+            </a>
+            <a href="install.html">
+                <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 3v10"/><path d="m8.5 10.5 3.5 3.5 3.5-3.5"/><rect x="5" y="17" width="14" height="3" rx="1.5"/></svg></span>
+                <span class="nav-text">下载帮助</span>
+            </a>
+            <a href="about.html">
+                <span class="nav-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M6 19a6 6 0 0 1 12 0"/></svg></span>
+                <span class="nav-text">关于我们</span>
+            </a>
+        </div>
+
+    </div>
+</div>
+<div class="main-content">
+<div class="container">
+
+        <div class="page-actions" data-page-actions>
+            <div class="page-actions-label">页面互动</div>
+            <a class="action-btn share-facebook-btn" href="#" target="_blank" rel="noopener noreferrer">
+                <span>分享到 Facebook</span>
+            </a>
+            <button class="action-btn like-btn" type="button">
+                <span class="like-btn-text">点赞</span>
+                <span class="like-count">0</span>
+            </button>
+            <span class="action-meta like-note">当前为静态站前端版：同一浏览器 24 小时内同页面只能点 1 次。</span>
+        </div>
+
+<div class="page-header">
+<h1>🎣 捕鱼攻略大全</h1>
+<p>精选H19捕鱼游戏技巧、Boss打法、免费金币获取方法，助你轻松上分！</p>
+</div>
+<div class="two-columns">
+<!-- 左侧文章列表 -->
+<div class="articles-grid">
+<!-- 文章1 -->
+<div class="card">
+<div class="card-img" style="background-image: url('/img/cards/fish-tips.webp');"></div>
+<div class="card-content">
+<div class="card-title">H19 捕鱼高手必看：高分鱼出现规律实测</div>
+<div class="card-meta">📅 2025-03-20 | 🔥 1.2w阅读</div>
+<div class="card-excerpt">深度实测各类鱼群刷新时间与炮台倍率选择，助你每天多赚30%金币。结合最新版本数据，老玩家经验分享...</div>
+<a class="read-more" href="/article/fish-1.html">阅读全文 →</a>
+</div>
+</div>
+<!-- 文章2 -->
+<div class="card">
+<div class="card-img" style="background-image: url('/img/cards/fish-boss.webp');"></div>
+<div class="card-content">
+<div class="card-title">捕鱼达人必备：高倍率炮台选择指南</div>
+<div class="card-meta">📅 2025-03-19 | 🔥 9.2k阅读</div>
+<div class="card-excerpt">不同炮台倍率对应不同鱼种收益，教你用最小成本打出最大回报，职业玩家实战经验。</div>
+<a class="read-more" href="/article/fish-2.html">阅读全文 →</a>
+</div>
+</div>
+<!-- 文章3 -->
+<div class="card">
+<div class="card-img" style="background-image: url('/img/cards/fish-shark.webp');"></div>
+<div class="card-content">
+<div class="card-title">黄金鲨鱼刷新时间表（每日实测）</div>
+<div class="card-meta">📅 2025-03-17 | 🔥 8.7k阅读</div>
+<div class="card-excerpt">每天固定时段高爆率鱼群出没，收藏此表轻松捕大鱼，错过再等一天。</div>
+<a class="read-more" href="/article/fish-3.html">阅读全文 →</a>
+</div>
+</div>
+<!-- 文章4 -->
+<div class="card">
+<div class="card-img" style="background-image: url('/img/cards/fish-mission.webp');"></div>
+<div class="card-content">
+<div class="card-title">捕鱼任务系统全解析，免费领海量子弹</div>
+<div class="card-meta">📅 2025-03-14 | 🔥 7.5k阅读</div>
+<div class="card-excerpt">每日任务、成就奖励领取攻略，零成本获取资源，新手必看。</div>
+<a class="read-more" href="/article/fish-4.html">阅读全文 →</a>
+</div>
+</div>
+<!-- 文章5 -->
+<div class="card">
+<div class="card-img" style="background-image: url('/img/cards/fish-laser.webp');"></div>
+<div class="card-content">
+<div class="card-title">激光炮使用时机与角度技巧，命中率翻倍</div>
+<div class="card-meta">📅 2025-03-10 | 🔥 6.8k阅读</div>
+<div class="card-excerpt">职业玩家视角，掌握穿透与连锁机制，让你一发入魂。</div>
+<a class="read-more" href="/article/fish-5.html">阅读全文 →</a>
+</div>
+</div>
+<!-- 文章6 -->
+<div class="card">
+<div class="card-img" style="background-image: url('/img/cards/fish-bau-cua.webp');"></div>
+<div class="card-content">
+<div class="card-title">小游戏“Bau Cua”福利攻略，快速赚金币</div>
+<div class="card-meta">📅 2025-03-08 | 🔥 5.4k阅读</div>
+<div class="card-excerpt">捕鱼内置的越南传统骰子游戏，每局15秒，利用概率技巧稳定收益。</div>
+<a class="read-more" href="/article/fish-6.html">阅读全文 →</a>
+</div>
+</div>
+</div>
+<!-- 右侧边栏 -->
+<aside class="sidebar">
+<div class="widget">
+<h3>🎁 捕鱼活动</h3>
+<div class="activity-item">
+<strong>⚡ 限时双倍经验</strong><br/>
+                        即日起至3月31日，捕鱼经验+金币掉落提升50%。
+                    </div>
+<div class="activity-item">
+<strong>🏆 捕鱼大赛</strong><br/>
+                        周末排行榜前100名瓜分10亿金币，快来挑战！
+                    </div>
+<div class="activity-item">
+<strong>🎉 每日礼包码</strong><br/>
+                        关注粉丝专页，每日领取免费金币和子弹。
+                    </div>
+</div>
+<div class="widget">
+<h3>📌 热门攻略</h3>
+<ul class="hot-list">
+<li><a href="/article/fish-7.html">▸ 鱼阵破解技巧：如何一炮多鱼</a></li>
+<li><a href="/article/fish-8.html">▸ Boss鱼必中方法（龙神/火凤凰）</a></li>
+<li><a href="/article/fish-9.html">▸ 免费金币领取途径大全</a></li>
+<li><a href="/article/fish-10.html">▸ 捕鱼心态与资金管理策略</a></li>
+</ul>
+</div>
+<div class="widget">
+<h3>📱 联系玩家群</h3>
+<p>获取最新活动资讯、礼包码和安装帮助</p>
+<a class="btn-outline" href="#" style="display:inline-block; margin-top:8px;">加入Telegram群</a>
+<a class="btn-outline" href="#" style="display:inline-block; margin-top:8px; margin-left:8px;">Zalo 客服</a>
+</div>
+<div class="widget">
+<h3>🎁 下载APP领福利</h3>
+<p>通过本站下载，注册即送专属金币礼包！</p>
+<a class="btn-download" href="https://h19.com/download?ref=h19club" id="downloadBtn">📲 立即下载</a>
+</div>
+</aside>
+</div>
+</div>
+</div>
+<footer>
+<p>© 2025 H19 玩家攻略站 — 独立资讯分享，与官方无直接关联。理性娱乐，禁止赌博。</p>
+<p style="margin-top: 8px;">✨ 本站所有下载链接均包含推广标识，注册即享专属福利 ✨</p>
+</footer>
+<script>
+    // ========== 禁止图片右键菜单 ==========
+    document.addEventListener('contextmenu', function(e) {
+        if (e.target.tagName === 'IMG') {
+            e.preventDefault();
+            return false;
+        }
+    });
+
+    // 可选：为下载按钮添加追踪（无需邀请码）
+    const downloadBtn = document.getElementById('downloadBtn');
+    if (downloadBtn) {
+        // 已在 href 中设置带参数链接，无需额外操作
+        console.log('下载链接已配置代理参数');
+    }
+</script>
+
+<script>
+(function () {
+  var toggle = document.getElementById('menuToggle');
+  var navbar = document.querySelector('.navbar');
+  if (!toggle || !navbar) return;
+  toggle.addEventListener('click', function () {
+    var open = navbar.classList.toggle('menu-open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+})();
+</script>
+
+
+<script>
+(function () {
+  function ensureActionBars() {
+    var containers = document.querySelectorAll('.container');
+    containers.forEach(function(container, idx) {
+      if (idx > 0) return;
+      if (container.querySelector('[data-page-actions]')) return;
+      container.insertAdjacentHTML('afterbegin', `
+        <div class="page-actions" data-page-actions>
+            <div class="page-actions-label">页面互动</div>
+            <a class="action-btn share-facebook-btn" href="#" target="_blank" rel="noopener noreferrer">
+                <span>分享到 Facebook</span>
+            </a>
+            <button class="action-btn like-btn" type="button">
+                <span class="like-btn-text">点赞</span>
+                <span class="like-count">0</span>
+            </button>
+            <span class="action-meta like-note">当前为静态站前端版：同一浏览器 24 小时内同页面只能点 1 次。</span>
+        </div>
+`);
+    });
+  }
+
+  function initShareButtons() {
+    var currentUrl = window.location.href;
+    var pageTitle = document.title || 'H19';
+    var shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(currentUrl) + '&quote=' + encodeURIComponent(pageTitle);
+    document.querySelectorAll('.share-facebook-btn').forEach(function(btn){
+      btn.setAttribute('href', shareUrl);
+    });
+  }
+
+  function initLikes() {
+    var pageKey = 'h19_like_' + window.location.pathname.replace(/[^a-zA-Z0-9]/g, '_');
+    var likedKey = pageKey + '_liked_until';
+    var countKey = pageKey + '_count';
+    var now = Date.now();
+    var likedUntil = parseInt(localStorage.getItem(likedKey) || '0', 10);
+    var count = parseInt(localStorage.getItem(countKey) || '0', 10);
+
+    document.querySelectorAll('.like-btn').forEach(function(btn){
+      var countEl = btn.querySelector('.like-count');
+      var textEl = btn.querySelector('.like-btn-text');
+      if (countEl) countEl.textContent = String(count);
+
+      if (likedUntil > now) {
+        btn.classList.add('is-liked');
+        btn.disabled = true;
+        if (textEl) textEl.textContent = '已点赞';
+      }
+
+      btn.addEventListener('click', function() {
+        var currentNow = Date.now();
+        var currentLikedUntil = parseInt(localStorage.getItem(likedKey) || '0', 10);
+        var currentCount = parseInt(localStorage.getItem(countKey) || '0', 10);
+
+        if (currentLikedUntil > currentNow) {
+          btn.classList.add('is-liked');
+          btn.disabled = true;
+          if (textEl) textEl.textContent = '已点赞';
+          if (countEl) countEl.textContent = String(currentCount);
+          return;
+        }
+
+        currentCount += 1;
+        localStorage.setItem(countKey, String(currentCount));
+        localStorage.setItem(likedKey, String(currentNow + 24 * 60 * 60 * 1000));
+
+        btn.classList.add('is-liked');
+        btn.disabled = true;
+        if (textEl) textEl.textContent = '已点赞';
+        if (countEl) countEl.textContent = String(currentCount);
+      });
+    });
+  }
+
+  ensureActionBars();
+  initShareButtons();
+  initLikes();
+})();
+</script>
+
+</body>
+</html>

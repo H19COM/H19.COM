@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>H19.CLUN - 首存说明与福利总览</title>
+    <meta name="description" content="H19首存说明页，集中展示首存规则、常见问题、活动说明与后续内容入口。">
+    <meta name="keywords" content="H19,首存,H19首存,H19说明,H19活动">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--bg:#f4f8fb;--card:#fff;--text:#1e293b;--muted:#64748b;--line:#e2e8f0}
+        body{font-family:'Segoe UI',Roboto,'Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+        .navbar{position:fixed;top:0;left:0;width:100%;background:linear-gradient(180deg,#123d62 0%,#0f3b5c 100%);box-shadow:0 8px 24px rgba(15,59,92,.18);z-index:1000;border-bottom:1px solid rgba(255,255,255,.08)}
+        .nav-container{max-width:1280px;margin:0 auto;padding:10px 16px 12px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:nowrap}
+        .logo{font-size:1.25rem;font-weight:800;color:#fff;letter-spacing:-.2px;padding:2px 0;display:flex;align-items:center;gap:10px;flex-shrink:0}
+        .brand-text{color:#fff}
+        .site-logo{width:40px;height:40px;object-fit:contain;border-radius:10px;background:transparent;flex-shrink:0}
+        .mobile-brand{display:none}.menu-toggle{display:none}
+        .nav-links{display:flex;align-items:stretch;gap:8px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;padding:2px 0 0;max-width:100%}
+        .nav-links::-webkit-scrollbar{display:none}
+        .nav-links a{min-width:72px;padding:8px 10px;text-decoration:none;font-weight:600;color:rgba(255,255,255,.84);border-radius:14px;transition:.2s;white-space:nowrap;font-size:.78rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);flex-shrink:0}
+        .nav-links a:hover{background:rgba(255,255,255,.12);color:#fff;transform:translateY(-1px)}
+        .nav-links a.active{background:#fff;color:#0f3b5c;box-shadow:0 8px 18px rgba(0,0,0,.14)}
+        .nav-links a.active .nav-icon svg{stroke:#0f3b5c}
+        .nav-icon{width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center}
+        .nav-icon svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+        .nav-text{line-height:1;display:block}
+        .main-content{padding-top:96px;min-height:100vh}
+        .container{max-width:1280px;margin:0 auto;padding:20px}
+        .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:stretch}
+        .hero-main{background:linear-gradient(135deg,#0f3b5c 0%,#174a72 60%,#1b5b87 100%);color:#fff;border-radius:28px;padding:34px;min-height:360px;box-shadow:0 18px 40px rgba(15,59,92,.15)}
+        .hero-main h1{font-size:2.3rem;line-height:1.18;margin-bottom:14px}
+        .hero-main p{color:rgba(255,255,255,.88);margin-bottom:12px}
+        .tag-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+        .tag-row span{padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.08);font-size:.84rem}
+        .hero-side,.grid,.sidebar{display:grid;gap:20px}
+        .card,.side-card,.widget{background:#fff;border-radius:24px;padding:22px;border:1px solid var(--line);box-shadow:0 8px 24px rgba(15,59,92,.04)}
+        .visual{min-height:220px;display:flex;align-items:center;justify-content:center;border-radius:20px;border:1px dashed #b7cfdf;background:linear-gradient(135deg,#edf6fb 0%,#dfeef8 100%);text-align:center;padding:20px}
+        .layout{display:grid;grid-template-columns:1fr 340px;gap:24px;margin-top:24px}
+        .card h2,.widget h3,.side-card h3{font-size:1.15rem;color:#0f2c3d;margin-bottom:12px}
+        .card p,.widget p,.side-card p{color:#64748b}
+        .list{display:grid;gap:12px;margin-top:14px}
+        .item{background:#f7fafc;border:1px solid #e8eff5;border-radius:18px;padding:16px}
+        .item strong{display:block;color:#0f3b5c;margin-bottom:6px}
+        .faq{list-style:none;display:grid;gap:12px}
+        .faq li{padding-bottom:12px;border-bottom:1px dashed #e2e8f0}
+        .faq li:last-child{border-bottom:none;padding-bottom:0}
+        footer{background:#eef3f6;margin-top:52px;padding:28px 20px;text-align:center;font-size:.88rem;color:#5f7387;border-top:1px solid #dce5ec}
+        @media (max-width:1024px){.hero,.layout{grid-template-columns:1fr}.hero-main h1{font-size:2rem}}
+        @media (max-width:768px){
+            .nav-container{display:grid;grid-template-columns:44px 1fr;align-items:center;gap:8px 10px;padding:10px 12px}
+            .logo{display:none}
+            .mobile-brand{display:flex;align-items:center;justify-content:center;min-height:40px;padding:6px 14px;border-radius:12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.10);justify-self:center;width:100%;max-width:220px}
+            .mobile-brand img{display:block;width:auto;height:26px;max-width:180px;object-fit:contain}
+            .menu-toggle{width:40px;height:40px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.10);border-radius:12px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;padding:0}
+            .menu-toggle svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+            .nav-links{display:none;grid-column:1 / -1;width:100%;margin-top:4px;padding:0;gap:8px;overflow:visible;flex-wrap:wrap}
+            .navbar.menu-open .nav-links{display:flex}
+            .nav-links a{min-width:calc(25% - 6px);flex:1 1 calc(25% - 6px);padding:10px 8px;font-size:.72rem;border-radius:12px}
+            .nav-icon,.nav-icon svg{width:20px;height:20px}
+            .main-content{padding-top:88px}
+            .container{padding:14px}
+            .hero-main{padding:24px;min-height:auto}
+            .hero-main h1{font-size:1.62rem}
+        }
+    
+        .page-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 8px 0 20px;
+            padding: 14px 16px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 18px;
+            box-shadow: 0 8px 24px rgba(15,59,92,0.04);
+        }
+        .page-actions-label {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: #0f3b5c;
+            margin-right: 4px;
+        }
+        .action-btn {
+            appearance: none;
+            border: 1px solid #d7e2eb;
+            background: #f8fbfd;
+            color: #0f3b5c;
+            border-radius: 999px;
+            padding: 10px 16px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+        .action-btn:hover {
+            transform: translateY(-1px);
+            background: #eef5fa;
+        }
+        .action-btn.is-liked,
+        .action-btn[disabled] {
+            background: #0f3b5c;
+            color: #ffffff;
+            border-color: #0f3b5c;
+            cursor: default;
+        }
+        .action-meta {
+            color: #64748b;
+            font-size: 0.86rem;
+        }
+        @media (max-width: 768px) {
+            .page-actions {
+                margin: 6px 0 16px;
+                padding: 12px;
+                gap: 10px;
+            }
+            .page-actions-label {
+                width: 100%;
+                margin-right: 0;
+            }
+            .action-btn {
+                padding: 9px 14px;
+                font-size: 0.85rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="navbar">
+    <div class="nav-container">
+        <button class="menu-toggle" id="menuToggle" aria-label="打开导航" aria-expanded="false">
+            <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+        </button>
+        <div class="mobile-brand"><img src="logo-mobile.png" alt="H19.CLUN"></div>
+        <div class="logo"><img src="logo.png" alt="H19 Logo" class="site-logo" onerror="this.style.display='none'"><span class="brand-text">H19.CLUN</span></div>
+
+        <div class="nav-links" id="navLinks">
+            <a href="index.html" class="active">
+                <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M6 8c1.4-1.7 3.4-2.5 6-2.5s4.6.8 6 2.5"/><path d="M7 16c1.2 1.1 2.9 1.7 5 1.7s3.8-.6 5-1.7"/></svg></span>
+                <span class="nav-text">首存</span>
+            </a>
+            <a href="slot-guide.html">
+                <span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="12" height="16" rx="2"/><path d="M9 8h1M12 8h1M9 12h1M12 12h1"/><path d="M17 7h2a1 1 0 0 1 1 1v3"/></svg></span>
+                <span class="nav-text">老虎机</span>
+            </a>
+            <a href="fish-guide.html">
+                <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M3 12c2.8-3.4 6.2-5 10-5 3.4 0 5.9 1 8 3-2.1 2-4.6 3-8 3-3.8 0-7.2-1.6-10-5Z"/><path d="M8 12h.01"/><path d="M14 13c0 2.2-1.8 4-4 4"/></svg></span>
+                <span class="nav-text">捕鱼</span>
+            </a>
+            <a href="sports-guide.html">
+                <span class="nav-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3l3 4-3 2-3-2 3-4Zm-6 7 3 1 1 3-2 3-4-1 2-6Zm12 0 2 6-4 1-2-3 1-3 3-1Zm-8 8h4l1 3-3 2-3-2 1-3Z"/></svg></span>
+                <span class="nav-text">体育</span>
+            </a>
+            <a href="cockfight-guide.html">
+                <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M7 16c0-3 2-6 6-6 2.8 0 4.5 1.8 4.5 4.2 0 3.2-2.7 5.8-6 5.8H8.5C7.7 20 7 19.3 7 18.5V16Z"/><path d="M12 8c.5-1.5 1.8-2.5 3.5-2.5.6 0 1.2.1 1.7.4-.2-1.1.4-2.2 1.5-2.7"/><path d="M7 14 5 12l2-1"/></svg></span>
+                <span class="nav-text">斗鸡</span>
+            </a>
+            <a href="lottery-guide.html">
+                <span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="M8 10h8M8 14h5"/><circle cx="17" cy="14" r="1"/></svg></span>
+                <span class="nav-text">彩票</span>
+            </a>
+            <a href="events.html">
+                <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6"/><path d="M12 4v10"/><path d="m8 8 4-4 4 4"/></svg></span>
+                <span class="nav-text">活动介绍</span>
+            </a>
+            <a href="install.html">
+                <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 3v10"/><path d="m8.5 10.5 3.5 3.5 3.5-3.5"/><rect x="5" y="17" width="14" height="3" rx="1.5"/></svg></span>
+                <span class="nav-text">下载帮助</span>
+            </a>
+            <a href="about.html">
+                <span class="nav-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M6 19a6 6 0 0 1 12 0"/></svg></span>
+                <span class="nav-text">关于我们</span>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<div class="main-content">
+    <div class="container">
+
+        <div class="page-actions" data-page-actions>
+            <div class="page-actions-label">页面互动</div>
+            <a class="action-btn share-facebook-btn" href="#" target="_blank" rel="noopener noreferrer">
+                <span>分享到 Facebook</span>
+            </a>
+            <button class="action-btn like-btn" type="button">
+                <span class="like-btn-text">点赞</span>
+                <span class="like-count">0</span>
+            </button>
+            <span class="action-meta like-note">当前为静态站前端版：同一浏览器 24 小时内同页面只能点 1 次。</span>
+        </div>
+
+        <section class="hero">
+            <div class="hero-main">
+                <h1>H19 首存说明与福利总览</h1>
+                <p>这里作为新的默认首页，只保留“首存”这个核心频道。页面重点用于承接首存说明、规则说明、活动说明和后续频道分流，不再混杂过多不必要板块。</p>
+                <p>后期你可以把这里的标题、副标题和说明文案改成更适合越南市场的版本。当前先保留中文，方便你先确认布局、层级和结构。</p>
+                <div class="tag-row">
+                    <span>首存规则说明</span>
+                    <span>首存活动总览</span>
+                    <span>常见问题占位</span>
+                    <span>后期可换越南文</span>
+                </div>
+            </div>
+            <div class="hero-side">
+                <div class="side-card">
+                    <h3>首屏视觉预留区</h3>
+                    <div class="visual">这里后期可以放首存活动图、品牌图或场景图。建议保持展示型，不要做过强按钮感。</div>
+                </div>
+                <div class="side-card">
+                    <h3>首页作用</h3>
+                    <p>首页现在只负责“首存”这个主题，不再承担全部频道堆叠。其他频道通过导航进入，首页本身只做主说明与总入口。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="layout">
+            <div class="grid">
+                <div class="card">
+                    <h2>首存说明区</h2>
+                    <p>这里后期可以改成越南文长段落，用来解释首存的基本逻辑、首存领取方式、首存适用条件、首存相关规则以及与活动说明之间的关系。</p>
+                    <div class="list">
+                        <div class="item"><strong>首存内容占位 01</strong>这里可放首存基础规则说明，后期替换成正式文案。</div>
+                        <div class="item"><strong>首存内容占位 02</strong>这里可放首存领取条件说明，后期替换成正式文案。</div>
+                        <div class="item"><strong>首存内容占位 03</strong>这里可放首存活动限制说明，后期替换成正式文案。</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h2>首存相关问题</h2>
+                    <ul class="faq">
+                        <li><strong>首存是什么？</strong><span style="display:block;color:#64748b">这里解释首存的定义与用途，后期可改成更适合搜索的问答形式。</span></li>
+                        <li><strong>首存活动多久更新一次？</strong><span style="display:block;color:#64748b">这里说明活动更新节奏，后期可改成正式FAQ。</span></li>
+                        <li><strong>首存说明和活动介绍有什么区别？</strong><span style="display:block;color:#64748b">这里解释首页首存页与活动页之间的内容分工。</span></li>
+                    </ul>
+                </div>
+            </div>
+            <aside class="sidebar">
+                <div class="widget">
+                    <h3>首页关键词占位</h3>
+                    <p>这里后期可替换成更适合搜索的短词，例如围绕 H19、首存、活动、说明等相关表达来写。</p>
+                </div>
+                <div class="widget">
+                    <h3>图片尺寸预留</h3>
+                    <p>首屏横图建议：1200 × 800 px<br>电脑版 LOGO：120 × 120 px<br>手机版长条 LOGO：440 × 80 px</p>
+                </div>
+            </aside>
+        </section>
+    </div>
+</div>
+
+<footer>
+    <p>当前版本已按你的要求，仅保留指定频道导航，并把首页改为“首存”频道默认页。</p>
+</footer>
+
+<script>
+(function () {
+  var toggle = document.getElementById('menuToggle');
+  var navbar = document.querySelector('.navbar');
+  if (!toggle || !navbar) return;
+  toggle.addEventListener('click', function () {
+    var open = navbar.classList.toggle('menu-open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+})();
+</script>
+
+<script>
+(function () {
+  function ensureActionBars() {
+    var containers = document.querySelectorAll('.container');
+    containers.forEach(function(container, idx) {
+      if (idx > 0) return;
+      if (container.querySelector('[data-page-actions]')) return;
+      container.insertAdjacentHTML('afterbegin', `
+        <div class="page-actions" data-page-actions>
+            <div class="page-actions-label">页面互动</div>
+            <a class="action-btn share-facebook-btn" href="#" target="_blank" rel="noopener noreferrer">
+                <span>分享到 Facebook</span>
+            </a>
+            <button class="action-btn like-btn" type="button">
+                <span class="like-btn-text">点赞</span>
+                <span class="like-count">0</span>
+            </button>
+            <span class="action-meta like-note">当前为静态站前端版：同一浏览器 24 小时内同页面只能点 1 次。</span>
+        </div>
+`);
+    });
+  }
+
+  function initShareButtons() {
+    var currentUrl = window.location.href;
+    var pageTitle = document.title || 'H19';
+    var shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(currentUrl) + '&quote=' + encodeURIComponent(pageTitle);
+    document.querySelectorAll('.share-facebook-btn').forEach(function(btn){
+      btn.setAttribute('href', shareUrl);
+    });
+  }
+
+  function initLikes() {
+    var pageKey = 'h19_like_' + window.location.pathname.replace(/[^a-zA-Z0-9]/g, '_');
+    var likedKey = pageKey + '_liked_until';
+    var countKey = pageKey + '_count';
+    var now = Date.now();
+    var likedUntil = parseInt(localStorage.getItem(likedKey) || '0', 10);
+    var count = parseInt(localStorage.getItem(countKey) || '0', 10);
+
+    document.querySelectorAll('.like-btn').forEach(function(btn){
+      var countEl = btn.querySelector('.like-count');
+      var textEl = btn.querySelector('.like-btn-text');
+      if (countEl) countEl.textContent = String(count);
+
+      if (likedUntil > now) {
+        btn.classList.add('is-liked');
+        btn.disabled = true;
+        if (textEl) textEl.textContent = '已点赞';
+      }
+
+      btn.addEventListener('click', function() {
+        var currentNow = Date.now();
+        var currentLikedUntil = parseInt(localStorage.getItem(likedKey) || '0', 10);
+        var currentCount = parseInt(localStorage.getItem(countKey) || '0', 10);
+
+        if (currentLikedUntil > currentNow) {
+          btn.classList.add('is-liked');
+          btn.disabled = true;
+          if (textEl) textEl.textContent = '已点赞';
+          if (countEl) countEl.textContent = String(currentCount);
+          return;
+        }
+
+        currentCount += 1;
+        localStorage.setItem(countKey, String(currentCount));
+        localStorage.setItem(likedKey, String(currentNow + 24 * 60 * 60 * 1000));
+
+        btn.classList.add('is-liked');
+        btn.disabled = true;
+        if (textEl) textEl.textContent = '已点赞';
+        if (countEl) countEl.textContent = String(currentCount);
+      });
+    });
+  }
+
+  ensureActionBars();
+  initShareButtons();
+  initLikes();
+})();
+</script>
+
+</body>
+</html>
