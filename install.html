@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>安装帮助 - H19玩家攻略站</title>
+<meta content="H19 APP安装教程，Android和iOS下载方法，常见问题解答，专属福利领取指南。" name="description"/>
+<meta content="H19下载,H19安装,APP下载,安装帮助,新手福利" name="keywords"/>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.5;
+        }
+
+        /* 固定顶部导航 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            backdrop-filter: blur(2px);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0f3b5c;
+            letter-spacing: -0.5px;
+            padding: 14px 0;
+        }
+        .logo span {
+            color: #2c7da0;
+        }
+
+        .nav-links {
+            display: flex;
+            overflow-x: auto;
+            gap: 4px;
+            scrollbar-width: thin;
+            padding: 8px 0;
+        }
+        .nav-links a {
+            padding: 8px 16px;
+            text-decoration: none;
+            font-weight: 500;
+            color: #334155;
+            border-radius: 40px;
+            transition: all 0.2s;
+            white-space: nowrap;
+            font-size: 0.95rem;
+        }
+        .nav-links a:hover {
+            background: #eef2ff;
+            color: #1e40af;
+        }
+        .nav-links a.active {
+            background: #0f3b5c;
+            color: white;
+        }
+
+        /* 主内容区域 */
+        .main-content {
+            padding-top: 80px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 页面标题 */
+        .page-header {
+            margin-bottom: 32px;
+        }
+        .page-header h1 {
+            font-size: 2rem;
+            color: #0f2c3d;
+            border-left: 5px solid #2c7da0;
+            padding-left: 20px;
+        }
+        .page-header p {
+            color: #475569;
+            margin-top: 8px;
+            font-size: 1rem;
+        }
+
+        /* 两列布局 */
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 32px;
+        }
+
+        /* 安装步骤卡片 */
+        .install-card {
+            background: white;
+            border-radius: 28px;
+            padding: 32px;
+            border: 1px solid #e9eef3;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            margin-bottom: 32px;
+        }
+        .install-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #0f3b5c;
+        }
+        .download-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+        .btn-download {
+            flex: 1;
+            min-width: 200px;
+            background: #0f3b5c;
+            color: white;
+            padding: 14px 24px;
+            border-radius: 48px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: 0.2s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-download.android {
+            background: #2c7da0;
+        }
+        .btn-download.ios {
+            background: #1e293b;
+        }
+        .btn-download:hover {
+            transform: translateY(-2px);
+            filter: brightness(0.95);
+        }
+        .step {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+            align-items: flex-start;
+        }
+        .step-num {
+            width: 32px;
+            height: 32px;
+            background: #eef2ff;
+            color: #0f3b5c;
+            border-radius: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        .step-content {
+            flex: 1;
+        }
+        .step-content strong {
+            font-size: 1rem;
+        }
+        .note {
+            background: #fef9e3;
+            border-left: 4px solid #e6b422;
+            padding: 16px;
+            border-radius: 16px;
+            margin-top: 20px;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e9eef3;
+            padding-bottom: 16px;
+        }
+        .faq-question {
+            font-weight: 700;
+            color: #0f2c3d;
+            margin-bottom: 8px;
+        }
+        .faq-answer {
+            color: #475569;
+        }
+        .contact {
+            background: #f1f5f9;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        .contact a {
+            color: #2c7da0;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* 侧边栏 */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+        .widget {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            border: 1px solid #e9eef3;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+        .widget h3 {
+            font-size: 1.1rem;
+            border-left: 4px solid #2c7da0;
+            padding-left: 12px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        .hot-list {
+            list-style: none;
+        }
+        .hot-list li {
+            margin-bottom: 14px;
+            border-bottom: 1px dashed #edf2f7;
+            padding-bottom: 10px;
+        }
+        .hot-list a {
+            text-decoration: none;
+            color: #1e293b;
+            font-weight: 500;
+            display: block;
+        }
+        .hot-list a:hover {
+            color: #2c7da0;
+        }
+
+        footer {
+            background: #eef2f6;
+            margin-top: 60px;
+            padding: 32px 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #475569;
+            border-top: 1px solid #dce3ec;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0 16px;
+            }
+            .logo {
+                font-size: 1.3rem;
+                padding: 10px 0;
+            }
+            .nav-links {
+                width: 100%;
+                padding-bottom: 8px;
+            }
+            .two-columns {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .sidebar {
+                order: 2;
+            }
+            .main-content {
+                padding-top: 110px;
+            }
+            .install-card {
+                padding: 20px;
+            }
+            .download-buttons {
+                flex-direction: column;
+            }
+        }
+
+        img {
+            user-select: none;
+            -webkit-user-drag: none;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="navbar">
+<div class="nav-container">
+<div class="logo">H19<span>攻略站</span></div>
+<div class="nav-links">
+<a href="index.html">首页</a>
+<a href="fish-guide.html">捕鱼攻略</a>
+<a href="slot-guide.html">老虎机攻略</a>
+<a href="sports-guide.html">体育竞猜</a>
+<a href="cockfight-guide.html">斗鸡攻略</a>
+<a href="cardgame-guide.html">棋牌策略</a>
+<a href="lottery-guide.html">彩票预测</a>
+<a href="events.html">活动中心</a>
+<a class="active" href="install.html">安装帮助</a>
+<a href="about.html">关于我们</a>
+</div>
+</div>
+</div>
+<div class="main-content">
+<div class="container">
+<div class="page-header">
+<h1>📲 安装帮助</h1>
+<p>按照以下步骤下载并安装H19 APP，注册即可自动领取专属新手福利（无需邀请码）</p>
+</div>
+<div class="two-columns">
+<div>
+<!-- 主要安装说明 -->
+<div class="install-card">
+<h2>📱 选择您的设备</h2>
+<div class="download-buttons">
+<a class="btn-download android" href="https://h19.com/download/android?ref=h19club" id="androidBtn">📱 Android 下载 APK</a>
+<a class="btn-download ios" href="https://testflight.apple.com/join/xxxxx?ref=h19club" id="iosBtn">🍏 iOS 下载 (TestFlight)</a>
+</div>
+<h2>📖 安装步骤</h2>
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><strong>点击上方对应按钮</strong> – 安卓用户将直接下载安装包；iOS用户跳转TestFlight链接。</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><strong>允许“未知来源”安装（仅安卓）</strong> – 若系统提示“禁止安装未知来源应用”，请前往 设置 → 安全 → 开启“允许安装未知来源应用”（不同手机路径可能略有差异）。</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><strong>安装完成后打开APP</strong> – 注册/登录即可自动绑定福利，无需输入任何邀请码。</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><strong>领取专属礼包</strong> – 注册成功后系统自动发放金币+免费旋转至账户，请留意游戏内邮件。</div>
+</div>
+<div class="note">
+                        💡 提示：如果下载失败或遇到其他问题，请通过下方联系方式获取一对一帮助。
+                    </div>
+</div>
+<!-- 常见问题 -->
+<div class="install-card">
+<h2>❓ 常见问题</h2>
+<div class="faq-item">
+<div class="faq-question">Q: 安卓安装时提示“解析包错误”怎么办？</div>
+<div class="faq-answer">A: 请重新下载APK文件，确保网络稳定。若反复出现，可能是下载文件损坏，建议更换浏览器或使用流量下载。</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">Q: iOS安装TestFlight需要邀请码吗？</div>
+<div class="faq-answer">A: 不需要，点击上方iOS链接即可直接加入测试，无需额外邀请码。</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">Q: 安装后注册为什么没有收到福利？</div>
+<div class="faq-answer">A: 请确认您是通过本站的下载链接（带有推广参数）安装的。若未自动发放，请联系客服人工补发。</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">Q: 是否支持平板设备？</div>
+<div class="faq-answer">A: 支持，但部分功能可能为手机优化，体验略有差异。</div>
+</div>
+</div>
+</div>
+<aside class="sidebar">
+<div class="widget">
+<h3>📌 安装注意事项</h3>
+<ul class="hot-list">
+<li><a href="#">✓ 确保手机剩余空间大于200MB</a></li>
+<li><a href="#">✓ Android 5.0 或更高版本</a></li>
+<li><a href="#">✓ iOS 12.0 或更高版本</a></li>
+<li><a href="#">✓ 推荐使用Wi-Fi下载，避免流量超支</a></li>
+</ul>
+</div>
+<div class="widget">
+<h3>📞 需要帮助？</h3>
+<div class="contact">
+<p>如果遇到安装或注册问题，请通过以下方式联系我们：</p>
+<p><strong>Telegram:</strong> <a href="#">@H19_support</a></p>
+<p><strong>Zalo:</strong> <a href="#">+84 889 123 456</a></p>
+<p><strong>邮箱:</strong> <a href="mailto:support@h19club.vn">support@h19club.vn</a></p>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</div>
+<footer>
+<p>© 2025 H19 玩家攻略站 — 独立资讯分享，与官方无直接关联。理性娱乐，禁止赌博。</p>
+<p style="margin-top: 8px;">✨ 通过本站下载注册，自动享受专属福利，无需邀请码 ✨</p>
+</footer>
+<script>
+    // 替换为您的实际带参数下载链接（代理追踪）
+    const androidLink = "https://h19.com/download/android?ref=h19club";
+    const iosLink = "https://testflight.apple.com/join/xxxxx?ref=h19club";
+
+    document.getElementById('androidBtn').href = androidLink;
+    document.getElementById('iosBtn').href = iosLink;
+
+    // 禁止图片右键（页面内无图片，但保留以防将来添加）
+    document.addEventListener('contextmenu', function(e) {
+        if (e.target.tagName === 'IMG') {
+            e.preventDefault();
+            return false;
+        }
+    });
+</script>
+</body>
+</html>
